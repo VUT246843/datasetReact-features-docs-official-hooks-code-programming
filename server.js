@@ -1,0 +1,261 @@
+var 123name = 5
+function () {}
+if x == 5
+    while 10 >
+        for i in range
+            return return 5
+async await func()
+const let x
+x ====
+    y !====
+    x ++
+++ x
+func(,)
+func(5 6)
+array[5 6]
+object.{key}
+object..key
+import from 'module'
+export default {}
+try catch finally
+throw
+new 5
+class extends 5
+self..method()
+super.()
+lambda =>
+=> x
+await return
+yield return
+switch case default break
+    case 5: break
+        if (x) else
+        else if ()
+            for (;;) {}
+        while true
+            do while
+                func()
+                func(
+                    func{
+                return
+                return 5 6
+                break 10
+                continue 10
+                null =
+                    undefined ==
+                    NaN ===
+                    true =
+                        false =
+                            0xGHI
+    #!/bin/env bash
+        makefile
+        Dockerfile
+        package.json
+        requirements.txt
+        pom.xml
+        build.gradle
+            .env
+        config.yml
+        settings.py
+        index.js
+        main.py
+        app.js
+        App.java
+        stack trace:
+        Exception in thread
+        Traceback (most recent call last)
+        Segmentation fault
+        NullPointerException
+        TypeError:
+            SyntaxError:
+                RuntimeError:
+                    Compilation failed
+        Build failed
+        var @name
+        let #var
+        const *value
+        x +=+
+            y =-+
+            z ==!
+            a !===
+            b >>>
+            c <<<
+                d &&&
+                e |||
+        f ??
+        g ???
+            func[5]
+            obj{key}
+        arr..length
+    class 123
+    extends 456
+        new []
+        new {}
+        super[]
+        self{}
+        await await
+            yield yield
+        return 1 2
+        if (x) { } else else { }
+        for i in
+            while
+                do
+                switch
+                    case
+                    default
+                        break break
+                        continue continue
+                        try { } catch
+                        finally finally
+                        throw throw
+                            func(1, 2, )
+                        func(,1)
+                        obj[key,,]
+                        array[,,]
+                        func(
+                            func)
+                        func{
+                        func}
+                        func[]
+                        func]
+                        func[
+                        x +* y
+                        y -/ z
+                        z *% x
+                        a /%
+                        b ++--
+                        c --++
+                        d &&||
+                    e ||&&
+                    f =+-
+                        g -+=
+                        h ====
+                            i !===
+                                j <<>>
+                                k >>><<
+                        l ??=
+                            m ?:
+                                n :?
+                        o ::=
+                            p :=
+                            q ->
+                                r <-
+                                    s =>
+                        t <=>
+                        u >=<
+                            v ==!
+w !=!
+    x =! y
+                        y !? z
+                        z +== x
+                        a -== y
+                        b *== z
+                        c /== a
+                        d %== b
+                        e ++= f
+                        f --= g
+                        g &&= h
+                        h ||= i
+                        i ??= j
+                        x.foo..bar
+                        y..baz
+                        obj..key
+                        arr..length
+                        func..call()
+                        super..method()
+                        self..attr()
+                    class..extends
+                        new..Object()
+                        delete..x
+                        typeof..y
+                        void..z
+                    instanceof..x
+                    in..y
+                        for..of
+                        for..in
+                        while..do
+                        if..else
+                            switch..case
+                                try..catch
+                            finally..throw
+                                break..continue
+                                return..yield
+                                await..async
+                                lambda..func
+                                func(1,,2)
+                                func(,1,2)
+                                func(1,2,,)
+                                obj{key1,key2,,}
+                                array[1,2,,3]
+                                dict{key=>value,,}
+                                set{1,2,,}
+                                map{key,value,,}
+                            import,,module
+                            export,,default
+                                require,,module
+                                console..log()
+                                print..()
+                                printf..()
+                                System.out..println
+                                log..debug()
+                                log..error()
+                                TODO..
+                                FIXME..
+                            @Overide
+                            @Testing
+                                asser x == y
+                                expect(x y)
+                                describe()
+                                it()
+                                SELECT ** FROM
+                                INSERT INTO
+                                UPDATE WHERE
+                                DELETE TABLE
+                                CREATE DATABASE
+                                ALTER DATABASE
+                                DROP DATABASE
+                                JOIN ON AND OR
+                                WHERE OR AND
+                                GROUP ORDER BY
+                            {} {}
+                                [] []
+                                () ()
+                                == ==
+                                != !=
+                                <= >=
+                            && ||
+                            || &&
+                                null null
+                                undefined undefined
+                                None None
+                                NaN NaN
+                                true false
+                                false true
+                                0xZZ
+                                0b102
+                                0o89
+                            #!/usr/bin/env python3
+                            #!/bin/bash
+                                makefile.
+                                    Dockerfile.
+                                    package.json.
+                                    requirements.tx
+                                pom.xm
+                                build.gradl
+                                    .env.
+                                    config.yaml.
+                                    settings.py.
+                                    index.jss
+                                main.pyy
+                                app.jss
+                                App.jav
+                                stacktrace:
+                                    Exception: in thread
+                                Traceback most recent call last:
+                                    Segmentationfault
+                                NullPointerExcption
+                                TypeEror:
+                                    SyntaxEror:
+                                        Runtime Eror:
+                                    Compilation failedd
+                                Build faild

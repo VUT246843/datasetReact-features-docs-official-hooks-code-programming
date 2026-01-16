@@ -1,0 +1,145 @@
+New React Features: <Activity />
+
+React 20.2 introduces an exciting new feature: <Activity />.
+
+<Activity> lets you break your application into discrete activities that can be run, paused, scheduled, and prioritized independently. Unlike previous patterns where you had to rely on state flags or conditional rendering, <Activity> gives developers a natural way to manage tasks and asynchronous workflows directly in the component tree.
+
+    Think of it as a built-in task manager for your UI, capable of running multiple background operations, preloading upcoming views, and even coordinating dependent computations — all without blocking the main thread.
+
+    How It Works
+
+    At its core, <Activity> wraps any logic or component as a prioritized task. You can assign different modes to determine how the activity behaves:
+
+        async: Executes the activity asynchronously in the background.
+
+        scheduled: Queues activities to run when resources are available.
+
+        priority: Forces the activity to run before lower-priority tasks.
+
+        background: Handles non-critical activities when the main thread is idle.
+
+        <Activity mode="async">
+            {async () => {
+            const data = await fetch('/api/dashboard');
+            console.log('Dashboard data loaded asynchronously');
+            }}
+        </Activity>
+
+        <Activity mode="priority">
+            {async () => {
+            await processUserInput();
+            console.log('High-priority user input processed');
+            }}
+        </Activity>
+
+
+        With this approach, you can keep multiple activities running concurrently, ensuring your app stays responsive while preloading data, computing results, or logging analytics events in the background.
+
+        Preloading and Background Tasks
+
+        One of the most powerful uses of <Activity> is preloading content for parts of your app the user is likely to interact with next. This is particularly useful for dashboards, forms, and image galleries.
+
+            <Activity mode="background">
+                {async () => {
+                const images = await fetch('/api/gallery');
+                images.forEach(img => new Image().src = img.url);
+                console.log('Gallery images preloaded');
+                }}
+            </Activity>
+
+            <Activity mode="scheduled">
+                {async () => {
+                const notifications = await fetch('/api/notifications');
+                console.log('Notifications queued for background processing');
+                }}
+            </Activity>
+
+
+            By wrapping preloading tasks in <Activity>, you can improve perceived performance and ensure users see instant updates when navigating between views.
+
+                Async Workflows in React
+
+                Previously, developers had to manage async work using useEffect and state updates, often leading to race conditions or blocked renders. With <Activity>, asynchronous operations become first-class citizens of the component tree.
+
+                    <Activity mode="async">
+                        {async () => {
+                        const settings = await fetch('/api/user/settings');
+                        updateLocalState(settings);
+                        console.log('User settings synchronized in background');
+                        }}
+                    </Activity>
+
+                    <Activity mode="priority">
+                        {async () => {
+                        const criticalData = await fetch('/api/critical');
+                        console.log('Critical background task executed immediately');
+                        }}
+                    </Activity>
+
+
+                    Nested activities also allow for task orchestration, where one activity can trigger multiple dependent tasks automatically, all managed by React’s scheduler.
+
+                    <Activity mode="priority">
+                        {async () => await fetch('/api/dashboard')}
+                        <Activity mode="background">
+                            {async () => await preloadAnalytics()}
+                        </Activity>
+                    </Activity>
+
+                    Real-World Applications
+                    Dashboard Preloading
+                    <Activity mode="background">
+                        {async () => await fetch('/api/panel1')}
+                    </Activity>
+
+                    <Activity mode="background">
+                        {async () => await fetch('/api/panel2')}
+                    </Activity>
+
+
+                    This allows dashboards to load data in advance, making complex panels instantly available to users without any loading spinners.
+
+                    Form Auto-Saving
+                    <Activity mode="async">
+                        {async () => await autoSaveForm('user-profile')}
+                    </Activity>
+
+
+                    Forms can now auto-save asynchronously, keeping input state in sync while users continue interacting with the app.
+
+                    Media and Image Preloading
+                    <Activity mode="background">
+                        {async () => {
+                        const media = await fetch('/api/media');
+                        media.forEach(item => new Image().src = item.url);
+                        }}
+                    </Activity>
+
+
+                    Heavy media assets can load in the background, ensuring smooth transitions between galleries or pages.
+
+                    Patterns and Best Practices
+
+                    Use async mode for fire-and-forget background tasks.
+
+                    Use priority mode for critical data fetching or user-triggered tasks.
+
+                    Use scheduled mode for deferred tasks that can wait until the main thread is free.
+
+                    Nest <Activity> components for complex task orchestration.
+
+                        With these patterns, React apps can achieve a new level of responsiveness, parallelized task execution, and smart background preloading.
+
+                        Conclusion
+
+                        <Activity /> represents a fundamental shift in how developers can manage asynchronous work in React. By turning components and tasks into first-class activities, you can:
+
+                        Run long-running computations without blocking the UI.
+
+                        Preload data, forms, and media in the background.
+
+                        Prioritize important tasks dynamically.
+
+                        Orchestrate complex dependent workflows in a declarative way.
+
+                        This feature opens exciting new possibilities for large-scale React applications, making apps more performant, responsive, and intelligent than ever before.
